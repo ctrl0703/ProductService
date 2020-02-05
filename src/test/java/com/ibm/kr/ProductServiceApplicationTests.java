@@ -20,14 +20,7 @@ class ProductServiceApplicationTests {
 	@Autowired
 	private CategoryRepository categoryRepository;
 	
-	@Test
-	void testGetCategoryProducts() {
-		List<Product> products = productService.getCategoryProducts("A");
-		
-		for(Product product : products) {
-			System.out.println(product.toString());
-		}
-	}
+
 	
 	@Test
 	void testCategoryList() {

@@ -27,6 +27,7 @@ public class Product {
 	
 	private String name;
 	private BigDecimal price;
+	private String category;
 	//private int stockCount;
 	//private double reviewRating;
 	//private boolean allowSale;
@@ -37,7 +38,5 @@ public class Product {
 	private Date createDate;
 	private String createId;
 	
-	@ManyToOne
-	@JoinColumn(name="CATEGORY")
-	private Category category;
+
 }
