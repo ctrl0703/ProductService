@@ -3,28 +3,160 @@
 
 <mapper namespace="com.ibm.kr.product">
 <resultMap id="product" type="com.ibm.kr.model.Product">
-	<id property="code" column="ID"/>
-	<result property="name" column="NAME"/>
-	<result property="price" column="PRICE"/>
-	<result property="category" column="CATEGORY"/>
-	<result property="createDate" column="CREATE_DATE"/>
-	<result property="createId" column="CREATE_ID"/>
+	<id property="PRDSEQ" column="PRDSEQ"/>
+	<result property="PRDNM" column="PRDNM"/>
+	<result property="BASICDESC" column="BASICDESC"/>
+	<result property="SALPRC" column="SALPRC"/>
+	<result property="STDPRC" column="STDPRC"/>
+	<result property="STKSTAT" column="STKSTAT"/>
+	<result property="MNUFACTAREA" column="MNUFACTAREA"/>
+	<result property="MNUFACT" column="MNUFACT"/>
+	<result property="REGID" column="REGID"/>
+	<result property="REGDATE" column="REGDATE"/>
+	<result property="UPDID" column="UPDID"/>
+	<result property="UPDDATE" column="UPDDATE"/>
+	<result property="PRDIMG2ND" column="PRDIMG2ND"/>
+	<result property="PRDIMG1ST" column="PRDIMG1ST"/>
+	<result property="PRDIMG" column="PRDIMG"/>
+	<result property="PRDVOL" column="PRDVOL"/>
+	<result property="PRDENGNM" column="PRDENGNM"/>
+	<result property="PRDNMS" column="PRDNMS"/>
+	<result property="P_TYPE" column="P_TYPE"/>
+	<result property="MAXPURQTY" column="MAXPURQTY"/>
+	<result property="PRDNMSCOLOR" column="PRDNMSCOLOR"/>
+	<result property="USECAREDESC" column="USECAREDESC"/>
+	<result property="QADESC" column="QADESC"/>
+	<result property="ASDESC" column="ASDESC"/>
+	<result property="USEENDDATE" column="USEENDDATE"/>
+	<result property="SALFL" column="SALFL"/>
+	<result property="MASSPURFL" column="MASSPURFL"/>
+	<result property="SITEHIDEFL" column="SITEHIDEFL"/>
+	<result property="PRDCOMPDESC" column="PRDCOMPDESC"/>
+	<result property="PRDUSEDESC" column="PRDUSEDESC"/>
+	<result property="PRDAUDITDESC" column="PRDAUDITDESC"/>
+	<result property="PRDTYPECD" column="PRDTYPECD"/>
+	<result property="PRDDSPIMG1" column="PRDDSPIMG1"/>
+	<result property="PRDDSPIMG2" column="PRDDSPIMG2"/>
+	<result property="PRDDTLHTMLURL" column="PRDDTLHTMLURL"/>
+	<result property="HASHTAG" column="HASHTAG"/>
+	<result property="SAPPRDCD " column="SAPPRDCD "/>
+	<result property="ORDERBY " column="ORDERBY "/>
+	<result property="KINDNM " column="KINDNM "/>
+	<result property="STKSTAT " column="STKSTAT "/>
+	<result property="UPDID " column="UPDID "/>
+	<result property="UPDDATE " column="UPDDATE "/>
+	<result property="BARCODE " column="BARCODE "/>
+	<result property="STDPRC " column="STDPRC "/>
 	
-
 </resultMap>
 
-<resultMap id="productMt" type="com.ibm.kr.model.ProductMT">
-	<id property="prdseq" column="PRDSEQ"/>
-	<result property="prdnm" column="PRDNM"/>
+<resultMap id="category" type="com.ibm.kr.model.Category">
+	<id property="id" column="CATEGORY_CODE"/>
+	<result property="name" column="NAME"/>
+	<result property="order" column="CAT_ORDER"/>
 </resultMap>
 
-<select id="selectAll" resultMap="product">
-	SELECT * FROM PRODUCT
+
+<select id="selectProduct" resultMap="product">
+	SELECT   a.PRDSEQ
+			,a.PRDNM
+			,a.BASICDESC
+			,a.SALPRC
+			,a.STDPRC
+			,a.STKSTAT
+			,a.MNUFACTAREA
+			,a.MNUFACT
+			,a.UPDID
+ 			,a.UPDDATE
+			,a.PRDIMG2ND
+			,a.PRDIMG1ST
+ 			,a.PRDIMG
+			,a.PRDVOL
+			,a.PRDENGNM
+			,a.PRDNMS
+			,a.P_TYPE
+			,a.MAXPURQTY
+			,a.PRDNMSCOLOR
+			,a.USECAREDESC
+			,a.QADESC
+			,a.ASDESC
+			,a.USEENDDATE
+			,a.SALFL
+			,a.MASSPURFL
+			,a.SITEHIDEFL
+			,a.PRDCOMPDESC
+			,a.PRDUSEDESC
+			,a.PRDAUDITDESC
+			,a.PRDTYPECD
+			,a.PRDDSPIMG1
+			,a.PRDDSPIMG2
+			,a.PRDDTLHTMLURL
+			,a.HASHTAG
+			,b.SAPPRDCD 
+			,b.ORDERBY 
+			,b.KINDNM 
+			,b.STKSTAT 
+			,b.BARCODE 
+			,a.STDPRC 
+	FROM PRODUCTMT a, PRODUCTDT b
+	where a.prdseq = b.prdseq
+	  and a.prdseq = #{prdseq}
 </select>
 
-<select id="selectProdMT" resultMap="productMt">
-	SELECT * 
-	FROM PRODUCTMT
+
+
+<select id="selectAll" resultMap="product">
+	SELECT   a.PRDSEQ
+			,a.PRDNM
+			,a.BASICDESC
+			,a.SALPRC
+			,a.STDPRC
+			,a.STKSTAT
+			,a.MNUFACTAREA
+			,a.MNUFACT
+			,a.UPDID
+ 			,a.UPDDATE
+			,a.PRDIMG2ND
+			,a.PRDIMG1ST
+ 			,a.PRDIMG
+			,a.PRDVOL
+			,a.PRDENGNM
+			,a.PRDNMS
+			,a.P_TYPE
+			,a.MAXPURQTY
+			,a.PRDNMSCOLOR
+			,a.USECAREDESC
+			,a.QADESC
+			,a.ASDESC
+			,a.USEENDDATE
+			,a.SALFL
+			,a.MASSPURFL
+			,a.SITEHIDEFL
+			,a.PRDCOMPDESC
+			,a.PRDUSEDESC
+			,a.PRDAUDITDESC
+			,a.PRDTYPECD
+			,a.PRDDSPIMG1
+			,a.PRDDSPIMG2
+			,a.PRDDTLHTMLURL
+			,a.HASHTAG
+			,b.SAPPRDCD 
+			,b.ORDERBY 
+			,b.KINDNM 
+			,b.STKSTAT 
+			,b.BARCODE 
+			,a.STDPRC 
+	FROM PRODUCTMT a, PRODUCTDT b
+	where a.prdseq = b.prdseq
+	
+</select>
+
+<select id="selectCategory" resultMap="category">
+	select CATEGORY_CODE
+		  ,NAME 
+		  ,CAT_ORDER
+	from category
+	
 </select>
 
 

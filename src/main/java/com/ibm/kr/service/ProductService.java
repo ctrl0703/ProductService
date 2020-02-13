@@ -8,7 +8,7 @@ import org.springframework.stereotype.Service;
 
 import com.ibm.kr.mapper.ProductDAO;
 import com.ibm.kr.model.Category;
-import com.ibm.kr.model.ProductMT;
+import com.ibm.kr.model.Product;
 import com.ibm.kr.repository.CategoryRepository;
 
 @Service
@@ -23,16 +23,21 @@ public class ProductService {
 	@Autowired
 	private CategoryRepository categoryRepository;
 
-	public List<ProductMT> getSelectAll() {
-		System.out.println("service ");
+	public List<Product> getSelectAll() {
 		return productDao.selectAll();
 	}
 	
 	
-	
 
 	public List<Category> getCategories() {
-		return categoryRepository.findAllByOrderByOrderAsc();
+		return productDao.selectCategory();
+	}
+	
+	// 제품코드를 이용한 검색 
+	public Product getProduct(String prdseq) {
+		
+		
+		return productDao.selectProduct(prdseq);
 	}
 
 }

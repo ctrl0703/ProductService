@@ -10,8 +10,8 @@ import lombok.Data;
 @Data
 @Embeddable
 public class ProdCatID implements Serializable {
-    @Column(name = "CATRELID")
-    private int catRelId;
+    @Column(name = "CATEGORY_CODE")
+    private int category_code;
  
     @Column(name = "PRDSEQ")
     private String prdSeq;

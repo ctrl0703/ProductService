@@ -8,6 +8,7 @@ import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.RestController;
 
 import com.ibm.kr.model.Category;
+import com.ibm.kr.model.Product;
 import com.ibm.kr.model.ProductMT;
 import com.ibm.kr.service.ProductService;
 
@@ -18,7 +19,7 @@ public class ProductController {
 	private ProductService productService;
 	
 	@GetMapping("/category/{categoryId}/product")
-	public List<ProductMT> getCategoryProducts(@PathVariable("categoryId") String categoryId) {
+	public List<Product> getCategoryProducts(@PathVariable("categoryId") String categoryId) {
 		
 		return productService.getSelectAll();
 	}
@@ -31,7 +32,14 @@ public class ProductController {
 	
 	
 	@GetMapping("/product/productList/")
-	List<ProductMT> getAllProducts() {
+	List<Product> getAllProducts() {
 		return productService.getSelectAll();
 	}
+	
+	@GetMapping("/product/{productId}")
+	Product getProduct(@PathVariable("productId") String productId) {
+		
+		return  productService.getProduct(productId);
+	}
+	
 }
