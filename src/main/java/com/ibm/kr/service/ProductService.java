@@ -39,5 +39,16 @@ public class ProductService {
 		
 		return productDao.selectProduct(prdseq);
 	}
+	
+	public List<Category> getCategoryList(Category category) {
+		return productDao.selectCategoryList(category);
+	}
+	
+	public List<Category> getCategoryId(Category category) {
+		List<Category> CategoryIdList = null;
+		
+		return null;
+	}
+	
 
 }

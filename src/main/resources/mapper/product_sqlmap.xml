@@ -54,8 +54,9 @@
 	<id property="id" column="CATEGORY_CODE"/>
 	<result property="name" column="NAME"/>
 	<result property="order" column="CAT_ORDER"/>
+	<result property="superId" column="SUPER_CATEGORY_CODE"/>
+	<result property="depth" column="DEPTH"/>
 </resultMap>
-
 
 <select id="selectProduct" resultMap="product">
 	SELECT   a.PRDSEQ
@@ -159,7 +160,25 @@
 	
 </select>
 
-
-
+<select id="selectCategoryList" parameterType="com.ibm.kr.model.Category" resultMap="category">
+	SELECT CATEGORY_CODE
+		  ,NAME 
+		  ,CAT_ORDER
+		  ,SUPER_CATEGORY_CODE
+	FROM CATEGORY WHERE 1=1
+	<if test="depth != 0">
+		AND DEPTH = #{depth}
+	</if>
+	<if test="order != 0">
+		AND CAT_ORDER = #{order}
+	</if>
+	<if test="superId != null">
+		AND SUPER_CATEGORY_CODE = #{superId}
+	</if>
+	<if test="id != null">
+		AND CATEGORY_CODE = #{id}
+	</if>
+	ORDER BY CAT_ORDER
+</select>
 
 </mapper>

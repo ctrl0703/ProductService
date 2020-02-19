@@ -28,8 +28,35 @@ public class ProductController {
 	List<Category> getCategories() {
 		return productService.getCategories();
 	}
+
+	@GetMapping("/category/depth/{depth}")
+	List<Category> getCategoryDepth(@PathVariable("depth") int depth) {
+		Category category = new Category();
+		category.setDepth(depth);
+		return productService.getCategoryList(category);
+	}
 	
+	@GetMapping("/category/depth/{depth}/{order}")
+	List<Category> getCategoryOne(@PathVariable("depth") int depth, @PathVariable("order") int order) {
+		Category category = new Category();
+		category.setDepth(depth);
+		category.setOrder(order);
+		return productService.getCategoryList(category);
+	}
 	
+	@GetMapping("/category/id/{id}")
+	List<Category> getCategoryId(@PathVariable("id") String id) {
+		Category category = new Category();
+		category.setId(id);
+		return productService.getCategoryList(category);
+	}
+	
+	@GetMapping("/category/superId/{superId}")
+	List<Category> getCategorySuperId(@PathVariable("superId") String superId) {
+		Category category = new Category();
+		category.setSuperId(superId);
+		return productService.getCategoryList(category);
+	}
 	
 	@GetMapping("/product/productList/")
 	List<Product> getAllProducts() {

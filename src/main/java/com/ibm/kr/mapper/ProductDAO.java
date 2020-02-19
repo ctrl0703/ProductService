@@ -31,5 +31,9 @@ public class ProductDAO {
 		
 		return sqlSession.selectOne("com.ibm.kr.product.selectProduct",prdseq);
 	}
-	
+
+	public List<Category> selectCategoryList(Category category) {
+		return sqlSession.selectList("com.ibm.kr.product.selectCategoryList", category);
+	}
+
 }

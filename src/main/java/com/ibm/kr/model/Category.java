@@ -19,5 +19,11 @@ public class Category {
 	private String name;
 	
 	@Column(name="CAT_ORDER")
-	private int order;
+	private int order = 0;
+	
+	private int depth = 0;
+	
+	@Column(name="SUPER_CATEGORY_CODE")
+	private String superId;
+
 }
