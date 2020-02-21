@@ -8,6 +8,7 @@ import org.springframework.stereotype.Service;
 
 import com.ibm.kr.mapper.ProductDAO;
 import com.ibm.kr.model.Category;
+import com.ibm.kr.model.ProdCatID;
 import com.ibm.kr.model.Product;
 import com.ibm.kr.repository.CategoryRepository;
 
@@ -48,6 +49,11 @@ public class ProductService {
 		List<Category> CategoryIdList = null;
 		
 		return null;
+	}
+	
+	public List<Product> getProductListCatRel(ProdCatID prodCatId){
+		
+		return productDao.selectProductCatRel(prodCatId);
 	}
 	
 

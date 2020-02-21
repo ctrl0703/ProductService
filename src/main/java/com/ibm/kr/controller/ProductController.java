@@ -5,11 +5,13 @@ import java.util.List;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PathVariable;
+import org.springframework.web.bind.annotation.PutMapping;
+import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RestController;
 
 import com.ibm.kr.model.Category;
+import com.ibm.kr.model.ProdCatID;
 import com.ibm.kr.model.Product;
-import com.ibm.kr.model.ProductMT;
 import com.ibm.kr.service.ProductService;
 
 @RestController
@@ -58,7 +60,7 @@ public class ProductController {
 		return productService.getCategoryList(category);
 	}
 	
-	@GetMapping("/product/productList/")
+	@GetMapping("/product/productList/") 
 	List<Product> getAllProducts() {
 		return productService.getSelectAll();
 	}
@@ -69,4 +71,9 @@ public class ProductController {
 		return  productService.getProduct(productId);
 	}
 	
+	@PutMapping("/product/catrel/B")
+	List<Product> getProductListCatRel(@RequestBody ProdCatID prodCatId) { 
+		
+		return  productService.getProductListCatRel(prodCatId);
+	}
 }
