@@ -26,7 +26,8 @@ public class ProductController {
 	
 	@GetMapping("/category")
 	List<Category> getCategories() {
-		return productService.getCategories();
+		Category category = new Category();
+		return productService.getCategoryList(category);
 	}
 
 	@GetMapping("/category/depth/{depth}")
@@ -44,11 +45,19 @@ public class ProductController {
 		return productService.getCategoryList(category);
 	}
 	
+	@GetMapping("/category/depth/{depth}/id/{id}")
+	Category getCategoryDepthId(@PathVariable("depth") int depth, @PathVariable("id") String id) {
+		Category category = new Category();
+		category.setDepth(depth);
+		category.setId(id);
+		return productService.getCategoryList(category).get(0);
+	}
+	
 	@GetMapping("/category/id/{id}")
-	List<Category> getCategoryId(@PathVariable("id") String id) {
+	Category getCategoryId(@PathVariable("id") String id) {
 		Category category = new Category();
 		category.setId(id);
-		return productService.getCategoryList(category);
+		return productService.getCategoryList(category).get(0);
 	}
 	
 	@GetMapping("/category/superId/{superId}")
