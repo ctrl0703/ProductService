@@ -8,6 +8,7 @@ import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.RestController;
 
 import com.ibm.kr.model.Category;
+import com.ibm.kr.model.ProdCatRel;
 import com.ibm.kr.model.Product;
 import com.ibm.kr.model.ProductMT;
 import com.ibm.kr.service.ProductService;
@@ -22,6 +23,15 @@ public class ProductController {
 	public List<Product> getCategoryProducts(@PathVariable("categoryId") String categoryId) {
 		
 		return productService.getSelectAll();
+	}
+	
+	@GetMapping("/products/category/{id}/{pageStart}/{pageEnd}")
+	List<ProdCatRel> getProductsByCat(@PathVariable("id") String id, @PathVariable("pageStart") int pageStart, @PathVariable("pageEnd") int pageEnd) {
+		ProdCatRel prodCatRel = new ProdCatRel();
+		prodCatRel.setId(id);
+		prodCatRel.setPageStart(pageStart);
+		prodCatRel.setPageEnd(pageEnd);
+		return productService.getProductsByCat(prodCatRel);
 	}
 	
 	@GetMapping("/category")

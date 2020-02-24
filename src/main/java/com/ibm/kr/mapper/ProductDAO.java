@@ -7,6 +7,7 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Repository;
 
 import com.ibm.kr.model.Category;
+import com.ibm.kr.model.ProdCatRel;
 import com.ibm.kr.model.Product;
 
 
@@ -30,6 +31,10 @@ public class ProductDAO {
 		
 		
 		return sqlSession.selectOne("com.ibm.kr.product.selectProduct",prdseq);
+	}
+	
+	public List<ProdCatRel> selectProductsByCat(ProdCatRel prodCatRel) {
+		return sqlSession.selectList("com.ibm.kr.product.selectProductsByCat", prodCatRel);
 	}
 
 	public List<Category> selectCategoryList(Category category) {

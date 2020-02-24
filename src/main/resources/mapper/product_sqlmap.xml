@@ -58,6 +58,11 @@
 	<result property="depth" column="DEPTH"/>
 </resultMap>
 
+<resultMap id="prodCatRel" type="com.ibm.kr.model.ProdCatRel">
+	<id property="id" column="CATEGORY_CODE"/>
+	<result property="prdseq" column="PRDSEQ"/>
+</resultMap>
+
 <select id="selectProduct" resultMap="product">
 	SELECT   a.PRDSEQ
 			,a.PRDNM
@@ -152,12 +157,26 @@
 	
 </select>
 
+<select id="selectProductsByCat"  parameterType="com.ibm.kr.model.ProdCatRel" resultMap="prodCatRel">
+	SELECT * FROM (
+		SELECT *, COUNT(1) OVER() AS PAGETOTCNT FROM (
+			SELECT *,
+		           ROWNUM AS RNUM
+			FROM (
+				SELECT CATEGORY_CODE, PRDSEQ
+				FROM PRODCATREL
+				WHERE CATEGORY_CODE = #{id}
+				ORDER BY PRDSEQ
+			)
+		)
+	) WHERE RNUM <![CDATA[>=]]> #{pageStart} AND RNUM <![CDATA[<]]> #{pageEnd}
+</select>
+
 <select id="selectCategory" resultMap="category">
-	select CATEGORY_CODE
+	SELECT CATEGORY_CODE
 		  ,NAME 
 		  ,CAT_ORDER
-	from category
-	
+	FROM CATEGORY
 </select>
 
 <select id="selectCategoryList" parameterType="com.ibm.kr.model.Category" resultMap="category">
