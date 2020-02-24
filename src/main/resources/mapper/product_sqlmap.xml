@@ -201,4 +201,17 @@
 	ORDER BY CAT_ORDER
 </select>
 
+<select id="selectProductCatRel" parameterType="com.ibm.kr.model.ProdCatID" resultMap="product">
+	
+	SELECT c.prdseq
+	     , c.prdnm
+	     , c.salprc
+	FROM PROD_CAT_REL a
+	     left join PROD_CAT_REL b on a.category_code = b.category_code and  a.catrelid = b.catrelid  and <![CDATA[a.prdseq <> b.prdseq]]>
+	     left join PRODUCTMT c on b.prdseq = c.prdseq
+	WHERE  A.CATEGORY_CODE = #{category_code}
+	   AND A.PRDSEQ = #{prdSeq}
+</select>
+
+
 </mapper>
