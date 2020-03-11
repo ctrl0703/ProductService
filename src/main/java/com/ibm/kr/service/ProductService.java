@@ -1,6 +1,8 @@
 package com.ibm.kr.service;
 
+import java.util.HashMap;
 import java.util.List;
+import java.util.Map;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.context.annotation.ComponentScan;
@@ -8,10 +10,7 @@ import org.springframework.stereotype.Service;
 
 import com.ibm.kr.mapper.ProductDAO;
 import com.ibm.kr.model.Category;
-import com.ibm.kr.model.ProdCatRel;
-import com.ibm.kr.model.ProdCatID;
 import com.ibm.kr.model.Product;
-import com.ibm.kr.repository.CategoryRepository;
 
 @Service
 @ComponentScan("com.ibm.kr.mapper")
@@ -20,46 +19,29 @@ public class ProductService {
 	@Autowired
 	private ProductDAO  productDao;
 	
-	
-	
-	@Autowired
-	private CategoryRepository categoryRepository;
-
 	public List<Product> getSelectAll() {
 		return productDao.selectAll();
 	}
 	
-	
-
 	public List<Category> getCategories() {
 		return productDao.selectCategory();
 	}
 	
 	// 제품코드를 이용한 검색 
-	public Product getProduct(String prdseq) {
-		
-		
+	public Product getProduct(String prdseq) {	
 		return productDao.selectProduct(prdseq);
 	}
 	
-	public List<ProdCatRel> getProductsByCat(ProdCatRel prodCatRel) {
-		return productDao.selectProductsByCat(prodCatRel);
+	public List<Product> getProductsByCat(String id, int pageStart, int pageEnd) {
+		Map<String, Object> parameter = new HashMap<String, Object>();
+		parameter.put("id", id);
+		parameter.put("pageStart", pageStart);
+		parameter.put("pageEnd", pageEnd);
+		return productDao.selectProductsByCat(parameter);
 	}
 	
-	public List<Category> getCategoryList(Category category) {
-		return productDao.selectCategoryList(category);
+	public List<Category> getCategoryList(Map<String, Object> parameter) {
+		return productDao.selectCategoryList(parameter);
 	}
 	
-	public List<Category> getCategoryId(Category category) {
-		List<Category> CategoryIdList = null;
-		
-		return null;
-	}
-	
-	public List<Product> getProductListCatRel(ProdCatID prodCatId){
-		
-		return productDao.selectProductCatRel(prodCatId);
-	}
-	
-
 }

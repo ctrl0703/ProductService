@@ -6,25 +6,27 @@ import org.junit.jupiter.api.Test;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.boot.test.context.SpringBootTest;
 
+import com.ibm.kr.mapper.ProductDAO;
 import com.ibm.kr.model.Category;
 import com.ibm.kr.model.Product;
-import com.ibm.kr.repository.CategoryRepository;
-import com.ibm.kr.service.ProductService;
 
 @SpringBootTest
 class ProductServiceApplicationTests {
 	
 	@Autowired
-	private ProductService productService;
+	private ProductDAO productDAO;
 	
-	@Autowired
-	private CategoryRepository categoryRepository;
-	
-
+	@Test
+	void getProduct() {
+		List<Product> products = productDAO.selectAll();
+		for(Product product : products) {
+			System.out.println(product);
+		}
+	}
 	
 	@Test
 	void testCategoryList() {
-		List<Category> catetories = categoryRepository.findAllByOrderByOrderAsc();
+		List<Category> catetories = productDAO.selectCategory();
 		
 		for(Category category : catetories) {
 			System.out.println(category.toString());

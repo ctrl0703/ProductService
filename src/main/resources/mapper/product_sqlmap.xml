@@ -3,51 +3,30 @@
 
 <mapper namespace="com.ibm.kr.product">
 <resultMap id="product" type="com.ibm.kr.model.Product">
-	<id property="PRDSEQ" column="PRDSEQ"/>
-	<result property="PRDNM" column="PRDNM"/>
-	<result property="BASICDESC" column="BASICDESC"/>
-	<result property="SALPRC" column="SALPRC"/>
-	<result property="STDPRC" column="STDPRC"/>
-	<result property="STKSTAT" column="STKSTAT"/>
-	<result property="MNUFACTAREA" column="MNUFACTAREA"/>
-	<result property="MNUFACT" column="MNUFACT"/>
-	<result property="REGID" column="REGID"/>
-	<result property="REGDATE" column="REGDATE"/>
-	<result property="UPDID" column="UPDID"/>
-	<result property="UPDDATE" column="UPDDATE"/>
-	<result property="PRDIMG2ND" column="PRDIMG2ND"/>
-	<result property="PRDIMG1ST" column="PRDIMG1ST"/>
-	<result property="PRDIMG" column="PRDIMG"/>
-	<result property="PRDVOL" column="PRDVOL"/>
-	<result property="PRDENGNM" column="PRDENGNM"/>
-	<result property="PRDNMS" column="PRDNMS"/>
-	<result property="P_TYPE" column="P_TYPE"/>
-	<result property="MAXPURQTY" column="MAXPURQTY"/>
-	<result property="PRDNMSCOLOR" column="PRDNMSCOLOR"/>
-	<result property="USECAREDESC" column="USECAREDESC"/>
-	<result property="QADESC" column="QADESC"/>
-	<result property="ASDESC" column="ASDESC"/>
-	<result property="USEENDDATE" column="USEENDDATE"/>
-	<result property="SALFL" column="SALFL"/>
-	<result property="MASSPURFL" column="MASSPURFL"/>
-	<result property="SITEHIDEFL" column="SITEHIDEFL"/>
-	<result property="PRDCOMPDESC" column="PRDCOMPDESC"/>
-	<result property="PRDUSEDESC" column="PRDUSEDESC"/>
-	<result property="PRDAUDITDESC" column="PRDAUDITDESC"/>
-	<result property="PRDTYPECD" column="PRDTYPECD"/>
-	<result property="PRDDSPIMG1" column="PRDDSPIMG1"/>
-	<result property="PRDDSPIMG2" column="PRDDSPIMG2"/>
-	<result property="PRDDTLHTMLURL" column="PRDDTLHTMLURL"/>
-	<result property="HASHTAG" column="HASHTAG"/>
-	<result property="SAPPRDCD " column="SAPPRDCD "/>
-	<result property="ORDERBY " column="ORDERBY "/>
-	<result property="KINDNM " column="KINDNM "/>
-	<result property="STKSTAT " column="STKSTAT "/>
-	<result property="UPDID " column="UPDID "/>
-	<result property="UPDDATE " column="UPDDATE "/>
-	<result property="BARCODE " column="BARCODE "/>
-	<result property="STDPRC " column="STDPRC "/>
-	
+	<id property="id" column="PRDSEQ"/>
+	<result property="name" column="PRDNM"/>
+	<result property="imageUrl" column="PRDIMG"/>
+	<result property="header" column="PRDNMS"/>
+	<result property="basicDescription" column="BASICDESC"/>
+	<result property="hashTag" column="HASHTAG"/>
+	<result property="price" column="SALPRC"/>
+	<result property="restrictCoupon" column="CPNEXFL"/>
+	<result property="restrictPoint" column="PTUSENAFL"/>
+	<result property="restricNotMember" column="MEMBERONLYFL"/>
+	<result property="restrictBuyCount" column="BTYPTUNPAIDFL"/>
+	<result property="note" column="PURATTNMTS"/>
+	<result property="detailHtmlUrl" column="PRDDTLHTMLURL"/>
+	<result property="volume" column="PRDVOL"/>
+	<result property="manufacturer" column="MNUFACT"/>
+	<result property="manufacturedArea" column="MNUFACTAREA"/>
+	<result property="useEndDate" column="USEENDDATE"/>
+	<result property="useDescription" column="PRDUSEDESC"/>
+	<result property="skin" column="PRDCOMPDESC"/>
+	<result property="auditDescription" column="PRDAUDITDESC"/>
+	<result property="QADescription" column="QADESC"/>
+	<result property="element" column="PRDELEMENT"/>
+	<result property="useCareDescription" column="USECAREDESC"/>
+	<result property="ASDescription" column="ASDESC"/>
 </resultMap>
 
 <resultMap id="category" type="com.ibm.kr.model.Category">
@@ -55,117 +34,29 @@
 	<result property="name" column="NAME"/>
 	<result property="order" column="CAT_ORDER"/>
 	<result property="superId" column="SUPER_CATEGORY_CODE"/>
-	<result property="depth" column="DEPTH"/>
-</resultMap>
-
-<resultMap id="prodCatRel" type="com.ibm.kr.model.ProdCatRel">
-	<id property="id" column="CATEGORY_CODE"/>
-	<result property="prdseq" column="PRDSEQ"/>
 </resultMap>
 
 <select id="selectProduct" resultMap="product">
-	SELECT   a.PRDSEQ
-			,a.PRDNM
-			,a.BASICDESC
-			,a.SALPRC
-			,a.STDPRC
-			,a.STKSTAT
-			,a.MNUFACTAREA
-			,a.MNUFACT
-			,a.UPDID
- 			,a.UPDDATE
-			,a.PRDIMG2ND
-			,a.PRDIMG1ST
- 			,a.PRDIMG
-			,a.PRDVOL
-			,a.PRDENGNM
-			,a.PRDNMS
-			,a.P_TYPE
-			,a.MAXPURQTY
-			,a.PRDNMSCOLOR
-			,a.USECAREDESC
-			,a.QADESC
-			,a.ASDESC
-			,a.USEENDDATE
-			,a.SALFL
-			,a.MASSPURFL
-			,a.SITEHIDEFL
-			,a.PRDCOMPDESC
-			,a.PRDUSEDESC
-			,a.PRDAUDITDESC
-			,a.PRDTYPECD
-			,a.PRDDSPIMG1
-			,a.PRDDSPIMG2
-			,a.PRDDTLHTMLURL
-			,a.HASHTAG
-			,b.SAPPRDCD 
-			,b.ORDERBY 
-			,b.KINDNM 
-			,b.STKSTAT 
-			,b.BARCODE 
-			,a.STDPRC 
-	FROM PRODUCTMT a, PRODUCTDT b
-	where a.prdseq = b.prdseq
-	  and a.prdseq = #{prdseq}
+	SELECT *
+	FROM PRODUCT
+	where prdseq = #{prdseq}
 </select>
-
-
 
 <select id="selectAll" resultMap="product">
-	SELECT   a.PRDSEQ
-			,a.PRDNM
-			,a.BASICDESC
-			,a.SALPRC
-			,a.STDPRC
-			,a.STKSTAT
-			,a.MNUFACTAREA
-			,a.MNUFACT
-			,a.UPDID
- 			,a.UPDDATE
-			,a.PRDIMG2ND
-			,a.PRDIMG1ST
- 			,a.PRDIMG
-			,a.PRDVOL
-			,a.PRDENGNM
-			,a.PRDNMS
-			,a.P_TYPE
-			,a.MAXPURQTY
-			,a.PRDNMSCOLOR
-			,a.USECAREDESC
-			,a.QADESC
-			,a.ASDESC
-			,a.USEENDDATE
-			,a.SALFL
-			,a.MASSPURFL
-			,a.SITEHIDEFL
-			,a.PRDCOMPDESC
-			,a.PRDUSEDESC
-			,a.PRDAUDITDESC
-			,a.PRDTYPECD
-			,a.PRDDSPIMG1
-			,a.PRDDSPIMG2
-			,a.PRDDTLHTMLURL
-			,a.HASHTAG
-			,b.SAPPRDCD 
-			,b.ORDERBY 
-			,b.KINDNM 
-			,b.STKSTAT 
-			,b.BARCODE 
-			,a.STDPRC 
-	FROM PRODUCTMT a, PRODUCTDT b
-	where a.prdseq = b.prdseq
-	
+	SELECT *
+	FROM PRODUCT
 </select>
 
-<select id="selectProductsByCat"  parameterType="com.ibm.kr.model.ProdCatRel" resultMap="prodCatRel">
+<select id="selectProductsByCat" resultMap="product">
 	SELECT * FROM (
 		SELECT *, COUNT(1) OVER() AS PAGETOTCNT FROM (
 			SELECT *,
 		           ROWNUM AS RNUM
 			FROM (
-				SELECT CATEGORY_CODE, PRDSEQ
-				FROM PRODCATREL
-				WHERE CATEGORY_CODE = #{id}
+				SELECT A.*
+				FROM PRODUCT A, CATEGORY_PRODUCT B
+				WHERE B.CATEGORY_CODE = #{id}
+				AND A.PRDSEQ = B.PRDSEQ
 				ORDER BY PRDSEQ
 			)
 		)
@@ -179,19 +70,12 @@
 	FROM CATEGORY
 </select>
 
-<select id="selectCategoryList" parameterType="com.ibm.kr.model.Category" resultMap="category">
+<select id="selectCategoryList" resultMap="category">
 	SELECT CATEGORY_CODE
 		  ,NAME 
 		  ,CAT_ORDER
 		  ,SUPER_CATEGORY_CODE
-		  ,DEPTH
 	FROM CATEGORY WHERE 1=1
-	<if test="depth != 0">
-		AND DEPTH = #{depth}
-	</if>
-	<if test="order != 0">
-		AND CAT_ORDER = #{order}
-	</if>
 	<if test="superId != null">
 		AND SUPER_CATEGORY_CODE = #{superId}
 	</if>
@@ -200,18 +84,5 @@
 	</if>
 	ORDER BY CAT_ORDER
 </select>
-
-<select id="selectProductCatRel" parameterType="com.ibm.kr.model.ProdCatID" resultMap="product">
-	
-	SELECT c.prdseq
-	     , c.prdnm
-	     , c.salprc
-	FROM PROD_CAT_REL a
-	     left join PROD_CAT_REL b on a.category_code = b.category_code and  a.catrelid = b.catrelid  and <![CDATA[a.prdseq <> b.prdseq]]>
-	     left join PRODUCTMT c on b.prdseq = c.prdseq
-	WHERE  A.CATEGORY_CODE = #{category_code}
-	   AND A.PRDSEQ = #{prdSeq}
-</select>
-
 
 </mapper>
