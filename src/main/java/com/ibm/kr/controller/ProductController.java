@@ -62,7 +62,7 @@ public class ProductController {
 	}
 	
 	@GetMapping("/product/{productId}")
-	Product getProduct(@PathVariable("productId") String productId) {
+	Product getProduct(@PathVariable("productId") Long productId) {
 		
 		return  productService.getProduct(productId);
 	}

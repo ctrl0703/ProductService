@@ -28,7 +28,7 @@ public class ProductService {
 	}
 	
 	// 제품코드를 이용한 검색 
-	public Product getProduct(String prdseq) {	
+	public Product getProduct(Long prdseq) {	
 		return productDao.selectProduct(prdseq);
 	}
 	

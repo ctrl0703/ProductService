@@ -25,7 +25,7 @@ public class ProductDAO {
 		return sqlSession.selectList("com.ibm.kr.product.selectCategory");
 	}
 	
-	public Product selectProduct(String prdseq) {
+	public Product selectProduct(Long prdseq) {
 		return sqlSession.selectOne("com.ibm.kr.product.selectProduct", prdseq);
 	}
 	
