@@ -8,6 +8,7 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Repository;
 
 import com.ibm.kr.model.Category;
+import com.ibm.kr.model.Option;
 import com.ibm.kr.model.Product;
 
 
@@ -27,6 +28,10 @@ public class ProductDAO {
 	
 	public Product selectProduct(Long prdseq) {
 		return sqlSession.selectOne("com.ibm.kr.product.selectProduct", prdseq);
+	}
+	
+	public List<Option> selectOption(Long prdseq) {
+		return sqlSession.selectList("com.ibm.kr.product.selectOption", prdseq);
 	}
 	
 	public List<Product> selectProductsByCat(Map<String, Object> parameter) {

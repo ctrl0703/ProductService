@@ -36,6 +36,13 @@
 	<result property="superId" column="SUPER_CATEGORY_CODE"/>
 </resultMap>
 
+<resultMap id="option" type="com.ibm.kr.model.Option">
+	<id property="id" column="PRDSEQ"/>
+	<result property="name" column="KINDNM"/>
+	<result property="barcode" column="BARCODE"/>
+	<result property="priority" column="ORDERBY"/>
+</resultMap>
+
 <select id="selectProduct" resultMap="product">
 	SELECT *
 	FROM PRODUCT
@@ -48,26 +55,77 @@
 </select>
 
 <select id="selectProductsByCat" resultMap="product">
-	SELECT * FROM (
-		SELECT *, COUNT(1) OVER() AS PAGETOTCNT FROM (
-			SELECT *,
-		           ROWNUM AS RNUM
-			FROM (
-				SELECT A.*
-				FROM PRODUCT A, CATEGORY_PRODUCT B
-				WHERE B.CATEGORY_CODE = #{id}
-				AND A.PRDSEQ = B.PRDSEQ
-				ORDER BY PRDSEQ
-			)
-		)
-	) WHERE RNUM <![CDATA[>=]]> #{pageStart} AND RNUM <![CDATA[<]]> #{pageEnd}
+	SELECT prdseq
+		,prdimg
+		,prdnms
+		,prdnm
+		,basicdesc
+		,hashtag
+		,salprc
+		,cpnexfl
+		,ptusenafl
+		,memberonlyfl
+		,btyptunpaidfl
+		,purattnmts
+		,prddtlhtmlurl
+		,prdvol
+		,mnufact
+		,mnufactarea
+		,useenddate
+		,prdusedesc
+		,prdcompdesc
+		,prdauditdesc
+		,qadesc
+		,prdelement
+		,usecaredesc
+		,asdesc 
+	FROM 
+	(
+		SELECT * 
+		FROM 
+		(
+			SELECT *, COUNT(1) OVER() AS PAGETOTCNT 
+			FROM 
+			(
+				select category_prd.*
+					 , row_number () over () as RNUM
+				from 
+				(
+					with recursive search_category(category_code, name, super_category_code, cat_order,level) as
+					(
+						select category_code, name, super_category_code, cat_order , 0 
+						from   category a
+				<choose>
+					<when test ="id != null" >
+						where  a.category_code  = #{id}	
+					</when>
+					<otherwise>
+						where  a.super_category_code is null
+					</otherwise>
+				</choose>
+						union all
+						select a.category_code, a.name, a.super_category_code, a.cat_order , level+1
+						from   category a, search_category b
+						where  a.super_category_code = b.category_code 
+					)
+					select c.*
+					from search_category a
+					join category_product b on b.category_code = a.category_code 
+					join product  c on b.prdseq  = c.prdseq 
+					order by level , super_category_code, a.cat_order, b.prdseq 
+				) category_prd
+			) withCnt
+		) result	
+	) rm 
+	WHERE RNUM <![CDATA[>=]]> #{pageStart} AND RNUM <![CDATA[<]]> #{pageEnd}
 </select>
 
 <select id="selectCategory" resultMap="category">
 	SELECT CATEGORY_CODE
 		  ,NAME 
 		  ,CAT_ORDER
-	FROM CATEGORY
+		  ,SUPER_CATEGORY_CODE
+	FROM CATEGORY ORDER BY CAT_ORDER
 </select>
 
 <select id="selectCategoryList" resultMap="category">
@@ -83,6 +141,15 @@
 		AND CATEGORY_CODE = #{id}
 	</if>
 	ORDER BY CAT_ORDER
+</select>
+
+<select id="selectOption" resultMap="option">
+	SELECT PRDSEQ
+		  ,KINDNM
+		  ,BARCODE
+		  ,ORDERBY
+	  FROM OPTION
+     WHERE PRDSEQ = #{prdseq}
 </select>
 
 </mapper>

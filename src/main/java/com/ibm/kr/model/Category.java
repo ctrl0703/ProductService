@@ -16,4 +16,5 @@ public class Category {
 	private int order = 0;
 	private String superId;
 	private List<Category> subCategories = new ArrayList<Category>();
+	private List<Product> products = new ArrayList<Product>();
 }

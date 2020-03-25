@@ -1,6 +1,8 @@
 package com.ibm.kr.model;
 
 import java.math.BigDecimal;
+import java.util.ArrayList;
+import java.util.List;
 
 import lombok.Getter;
 import lombok.Setter;
@@ -30,8 +32,11 @@ public class Product {
 	String useDescription;
 	String skin;
 	String auditDescription;
-	String QADescription;
+	String qADescription;
 	String element;
 	String useCareDescription;
-	String ASDescription;
+	String aSDescription;
+	
+	List<Option> options = new ArrayList<Option>();
+	Category sameLineCategory;
 }
