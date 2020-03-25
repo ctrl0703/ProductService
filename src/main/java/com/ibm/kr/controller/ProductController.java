@@ -19,12 +19,6 @@ public class ProductController {
 	@Autowired
 	private ProductService productService;
 	
-	@GetMapping("/category/{categoryId}/product")
-	public List<Product> getCategoryProducts(@PathVariable("categoryId") String categoryId) {
-		
-		return productService.getSelectAll();
-	}
-	
 	@GetMapping("/products/category/{id}/{pageStart}/{pageEnd}")
 	public List<Product> getProductsByCat(@PathVariable("id") String id, @PathVariable("pageStart") int pageStart, @PathVariable("pageEnd") int pageEnd) {
 		return productService.getProductsByCat(id, pageStart, pageEnd);
