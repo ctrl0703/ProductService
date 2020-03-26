@@ -80,4 +80,16 @@ public class ProductController {
 		parameter.put("superId", categoryCode);
 		return productService.getCategoryList(parameter);
 	}
+
+	@GetMapping("/category/{categoryCode}")
+	public Category getCategory(@PathVariable String categoryCode) {
+		Map<String, Object> parameter = new HashMap<String, Object>();
+		parameter.put("id", categoryCode);
+		return productService.getCategory(parameter);
+	}
+
+	@GetMapping("/product/{productId}/category/{categoryCode}/product")
+	public List<Product> getRelatedProductList(@PathVariable Long productId, @PathVariable String categoryCode) {
+		return productService.getRelatedProductList(productId,categoryCode,1,60);
+	}
 }

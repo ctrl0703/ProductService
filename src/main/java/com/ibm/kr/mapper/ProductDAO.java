@@ -41,4 +41,8 @@ public class ProductDAO {
 	public List<Category> selectCategoryList(Map<String, Object> parameter) {
 		return sqlSession.selectList("com.ibm.kr.product.selectCategoryList", parameter);
 	}
+	
+	public List<Product> selectRelatedProductList(Map<String, Object> parameter) {
+		return sqlSession.selectList("com.ibm.kr.product.selectRelatedProductList", parameter);
+	}
 }

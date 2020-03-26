@@ -40,6 +40,15 @@ public class ProductService {
 		return product;
 	}
 	
+	public List<Product> getRelatedProductList(Long prdseq, String id, int pageStart, int pageEnd) {
+		Map<String, Object> parameter = new HashMap<String, Object>();
+		parameter.put("prdseq", prdseq);
+		parameter.put("id", id);
+		parameter.put("pageStart", pageStart);
+		parameter.put("pageEnd", pageEnd);
+		return productDao.selectRelatedProductList(parameter);
+	}
+	
 	public List<Product> getProductsByCat(String id, int pageStart, int pageEnd) {
 		Map<String, Object> parameter = new HashMap<String, Object>();
 		parameter.put("id", id);
@@ -47,6 +56,7 @@ public class ProductService {
 		parameter.put("pageEnd", pageEnd);
 		return productDao.selectProductsByCat(parameter);
 	}
+	
 	
 	public List<Category> getCategoryList(Map<String, Object> parameter) {
 		//json 계층구조 완성된 카테고리
@@ -70,6 +80,17 @@ public class ProductService {
 		}
 		
 		return catList;
+	}
+	
+	public Category getCategory(Map<String, Object> parameter) {
+		//전체 카테고리
+		List<Category> catListAll = productDao.selectCategory();
+		//Front에서 요청한 카테고리
+		List<Category> requestedCatList = productDao.selectCategoryList(parameter);
+		getSubCategoryList(requestedCatList,catListAll);
+		
+		//id는 고유하니까 list는 무조건 1개가 리턴된다는 가정
+		return requestedCatList.get(0);
 	}
 	
 	private void getSubCategoryList(List<Category> catList, List<Category> catListAll){

@@ -36,6 +36,9 @@ public class Product {
 	String element;
 	String useCareDescription;
 	String aSDescription;
+	Boolean isNew = false;
+	Boolean isBest = false;
+	Boolean isDiscount = false;
 	
 	List<Option> options = new ArrayList<Option>();
 	Category sameLineCategory;
