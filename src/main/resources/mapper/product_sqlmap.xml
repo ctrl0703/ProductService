@@ -27,6 +27,11 @@
 	<result property="element" column="PRDELEMENT"/>
 	<result property="useCareDescription" column="USECAREDESC"/>
 	<result property="ASDescription" column="ASDESC"/>
+	
+	<result property="isNew" column="NEWPRDFL"/>
+	<result property="isBest" column="BESTPRDFL"/>
+	<result property="isDiscount" column="DISCOUNTPRDFL"/>
+	
 </resultMap>
 
 <resultMap id="category" type="com.ibm.kr.model.Category">
@@ -79,6 +84,8 @@
 		,prdelement
 		,usecaredesc
 		,asdesc 
+		,newprdfl
+		,bestprdfl
 	FROM 
 	(
 		SELECT * 
@@ -109,9 +116,13 @@
 						where  a.super_category_code = b.category_code 
 					)
 					select c.*
+				         ,(case when newprd.prdseq is null then false else true end) newprdfl
+			             ,(case when bestprd.prdseq is null then false else true end) bestprdfl
 					from search_category a
 					join category_product b on b.category_code = a.category_code 
 					join product  c on b.prdseq  = c.prdseq 
+				    left outer join category_product newprd on newprd.category_code ='D' and newprd.prdseq =  c.prdseq
+				    left outer join category_product bestprd on bestprd.category_code ='E' and bestprd.prdseq =  c.prdseq
 					order by level , super_category_code, a.cat_order, b.prdseq 
 				) category_prd
 			) withCnt
@@ -119,6 +130,77 @@
 	) rm 
 	WHERE RNUM <![CDATA[>=]]> #{pageStart} AND RNUM <![CDATA[<]]> #{pageEnd}
 </select>
+
+
+<select id="selectRelatedProductList" resultMap="product">
+	SELECT prdseq
+		,prdimg
+		,prdnms
+		,prdnm
+		,basicdesc
+		,hashtag
+		,salprc
+		,cpnexfl
+		,ptusenafl
+		,memberonlyfl
+		,btyptunpaidfl
+		,purattnmts
+		,prddtlhtmlurl
+		,prdvol
+		,mnufact
+		,mnufactarea
+		,useenddate
+		,prdusedesc
+		,prdcompdesc
+		,prdauditdesc
+		,qadesc
+		,prdelement
+		,usecaredesc
+		,asdesc 
+		,newprdfl
+		,bestprdfl
+	FROM 
+	(
+		SELECT withCnt.*
+		     , COUNT(1) OVER() AS PAGETOTCNT 
+		FROM 
+		(
+			select p.*
+				,(case when newprd.prdseq is null then false else true end) newprdfl
+			    ,(case when bestprd.prdseq is null then false else true end) bestprdfl
+			    , row_number () over () as RNUM
+			from 
+			(
+				with recursive search_category(category_code, name, super_category_code, cat_order,level) as
+				(
+					select category_code, name, super_category_code, cat_order , 0 
+					from   category a
+					where  a.category_code  = #{id} 
+					union all
+					select a.category_code, a.name, a.super_category_code, a.cat_order , level+1
+					from   category a, search_category b
+					where  a.super_category_code = b.category_code 
+				)
+				select a.category_code ,c.prdseq
+				from search_category a
+				join category_product b on b.category_code = a.category_code 
+				join product  c on b.prdseq  = c.prdseq 
+				where c.prdseq = #{prdseq} 
+			) this_category
+			join category_product cp on cp.category_code  = this_category.category_code
+			join product  p on p.prdseq = cp.prdseq 
+			left outer join category_product newprd on newprd.category_code ='D' and newprd.prdseq =  p.prdseq
+			left outer join category_product bestprd on bestprd.category_code ='E' and bestprd.prdseq =  p.prdseq
+			where cp.prdseq is not null
+			  and cp.prdseq <![CDATA[<>]]> #{prdseq}  
+		) withCnt
+		order by prdseq 	
+	) result 
+	WHERE RNUM <![CDATA[>=]]> #{pageStart} AND RNUM <![CDATA[<]]> #{pageEnd}
+</select>
+
+
+
 
 <select id="selectCategory" resultMap="category">
 	SELECT CATEGORY_CODE
