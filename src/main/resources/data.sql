@@ -3597,6 +3597,919 @@ INSERT INTO CATEGORY_PRODUCT (CATEGORY_CODE, PRDSEQ) VALUES ('E', 20440);
 INSERT INTO CATEGORY_PRODUCT (CATEGORY_CODE, PRDSEQ) VALUES ('E', 25542);
 INSERT INTO CATEGORY_PRODUCT (CATEGORY_CODE, PRDSEQ) VALUES ('E', 25816);
 
+Insert into CATEGORY_PRODUCT
+   (PRDSEQ, CATEGORY_CODE)
+ Values
+   (11266, 'JA');
+Insert into CATEGORY_PRODUCT
+   (PRDSEQ, CATEGORY_CODE)
+ Values
+   (11266, 'UA');
+Insert into CATEGORY_PRODUCT
+   (PRDSEQ, CATEGORY_CODE)
+ Values
+   (12068, 'LA');
+Insert into CATEGORY_PRODUCT
+   (PRDSEQ, CATEGORY_CODE)
+ Values
+   (12068, 'OO');
+Insert into CATEGORY_PRODUCT
+   (PRDSEQ, CATEGORY_CODE)
+ Values
+   (12280, 'UN');
+Insert into CATEGORY_PRODUCT
+   (PRDSEQ, CATEGORY_CODE)
+ Values
+   (12416, 'UN');
+Insert into CATEGORY_PRODUCT
+   (PRDSEQ, CATEGORY_CODE)
+ Values
+   (12878, 'OO');
+Insert into CATEGORY_PRODUCT
+   (PRDSEQ, CATEGORY_CODE)
+ Values
+   (12878, 'TC');
+Insert into CATEGORY_PRODUCT
+   (PRDSEQ, CATEGORY_CODE)
+ Values
+   (12878, 'XC');
+Insert into CATEGORY_PRODUCT
+   (PRDSEQ, CATEGORY_CODE)
+ Values
+   (13059, 'LH');
+Insert into CATEGORY_PRODUCT
+   (PRDSEQ, CATEGORY_CODE)
+ Values
+   (13059, 'UA');
+Insert into CATEGORY_PRODUCT
+   (PRDSEQ, CATEGORY_CODE)
+ Values
+   (13059, 'XD');
+Insert into CATEGORY_PRODUCT
+   (PRDSEQ, CATEGORY_CODE)
+ Values
+   (13316, 'OO');
+Insert into CATEGORY_PRODUCT
+   (PRDSEQ, CATEGORY_CODE)
+ Values
+   (13316, 'TC');
+Insert into CATEGORY_PRODUCT
+   (PRDSEQ, CATEGORY_CODE)
+ Values
+   (13316, 'XA');
+Insert into CATEGORY_PRODUCT
+   (PRDSEQ, CATEGORY_CODE)
+ Values
+   (13317, 'OO');
+Insert into CATEGORY_PRODUCT
+   (PRDSEQ, CATEGORY_CODE)
+ Values
+   (13317, 'TC');
+Insert into CATEGORY_PRODUCT
+   (PRDSEQ, CATEGORY_CODE)
+ Values
+   (13317, 'XB');
+Insert into CATEGORY_PRODUCT
+   (PRDSEQ, CATEGORY_CODE)
+ Values
+   (13842, 'LI');
+Insert into CATEGORY_PRODUCT
+   (PRDSEQ, CATEGORY_CODE)
+ Values
+   (13842, 'UA');
+Insert into CATEGORY_PRODUCT
+   (PRDSEQ, CATEGORY_CODE)
+ Values
+   (13842, 'XC');
+Insert into CATEGORY_PRODUCT
+   (PRDSEQ, CATEGORY_CODE)
+ Values
+   (14397, 'OO');
+Insert into CATEGORY_PRODUCT
+   (PRDSEQ, CATEGORY_CODE)
+ Values
+   (14397, 'TC');
+Insert into CATEGORY_PRODUCT
+   (PRDSEQ, CATEGORY_CODE)
+ Values
+   (14769, 'UN');
+Insert into CATEGORY_PRODUCT
+   (PRDSEQ, CATEGORY_CODE)
+ Values
+   (14771, 'UN');
+Insert into CATEGORY_PRODUCT
+   (PRDSEQ, CATEGORY_CODE)
+ Values
+   (14772, 'UN');
+Insert into CATEGORY_PRODUCT
+   (PRDSEQ, CATEGORY_CODE)
+ Values
+   (14774, 'UN');
+Insert into CATEGORY_PRODUCT
+   (PRDSEQ, CATEGORY_CODE)
+ Values
+   (14997, 'OO');
+Insert into CATEGORY_PRODUCT
+   (PRDSEQ, CATEGORY_CODE)
+ Values
+   (14997, 'TC');
+Insert into CATEGORY_PRODUCT
+   (PRDSEQ, CATEGORY_CODE)
+ Values
+   (14997, 'XF');
+Insert into CATEGORY_PRODUCT
+   (PRDSEQ, CATEGORY_CODE)
+ Values
+   (15084, 'UK');
+Insert into CATEGORY_PRODUCT
+   (PRDSEQ, CATEGORY_CODE)
+ Values
+   (15598, 'OO');
+Insert into CATEGORY_PRODUCT
+   (PRDSEQ, CATEGORY_CODE)
+ Values
+   (15598, 'TC');
+Insert into CATEGORY_PRODUCT
+   (PRDSEQ, CATEGORY_CODE)
+ Values
+   (16017, 'UK');
+Insert into CATEGORY_PRODUCT
+   (PRDSEQ, CATEGORY_CODE)
+ Values
+   (16056, 'LA');
+Insert into CATEGORY_PRODUCT
+   (PRDSEQ, CATEGORY_CODE)
+ Values
+   (16056, 'UT');
+Insert into CATEGORY_PRODUCT
+   (PRDSEQ, CATEGORY_CODE)
+ Values
+   (16377, 'NN');
+Insert into CATEGORY_PRODUCT
+   (PRDSEQ, CATEGORY_CODE)
+ Values
+   (16377, 'XB');
+Insert into CATEGORY_PRODUCT
+   (PRDSEQ, CATEGORY_CODE)
+ Values
+   (16761, 'OO');
+Insert into CATEGORY_PRODUCT
+   (PRDSEQ, CATEGORY_CODE)
+ Values
+   (16761, 'TC');
+Insert into CATEGORY_PRODUCT
+   (PRDSEQ, CATEGORY_CODE)
+ Values
+   (16761, 'XH');
+Insert into CATEGORY_PRODUCT
+   (PRDSEQ, CATEGORY_CODE)
+ Values
+   (16762, 'OO');
+Insert into CATEGORY_PRODUCT
+   (PRDSEQ, CATEGORY_CODE)
+ Values
+   (16762, 'TC');
+Insert into CATEGORY_PRODUCT
+   (PRDSEQ, CATEGORY_CODE)
+ Values
+   (16762, 'XC');
+Insert into CATEGORY_PRODUCT
+   (PRDSEQ, CATEGORY_CODE)
+ Values
+   (16896, 'OO');
+Insert into CATEGORY_PRODUCT
+   (PRDSEQ, CATEGORY_CODE)
+ Values
+   (16957, 'OO');
+Insert into CATEGORY_PRODUCT
+   (PRDSEQ, CATEGORY_CODE)
+ Values
+   (16958, 'LI');
+Insert into CATEGORY_PRODUCT
+   (PRDSEQ, CATEGORY_CODE)
+ Values
+   (16958, 'UA');
+Insert into CATEGORY_PRODUCT
+   (PRDSEQ, CATEGORY_CODE)
+ Values
+   (16996, 'UD');
+Insert into CATEGORY_PRODUCT
+   (PRDSEQ, CATEGORY_CODE)
+ Values
+   (17076, 'LK');
+Insert into CATEGORY_PRODUCT
+   (PRDSEQ, CATEGORY_CODE)
+ Values
+   (17076, 'UA');
+Insert into CATEGORY_PRODUCT
+   (PRDSEQ, CATEGORY_CODE)
+ Values
+   (17076, 'XA');
+Insert into CATEGORY_PRODUCT
+   (PRDSEQ, CATEGORY_CODE)
+ Values
+   (17617, 'NO');
+Insert into CATEGORY_PRODUCT
+   (PRDSEQ, CATEGORY_CODE)
+ Values
+   (17617, 'UC');
+Insert into CATEGORY_PRODUCT
+   (PRDSEQ, CATEGORY_CODE)
+ Values
+   (17617, 'XE');
+Insert into CATEGORY_PRODUCT
+   (PRDSEQ, CATEGORY_CODE)
+ Values
+   (17618, 'NO');
+Insert into CATEGORY_PRODUCT
+   (PRDSEQ, CATEGORY_CODE)
+ Values
+   (17618, 'UC');
+Insert into CATEGORY_PRODUCT
+   (PRDSEQ, CATEGORY_CODE)
+ Values
+   (17618, 'XE');
+Insert into CATEGORY_PRODUCT
+   (PRDSEQ, CATEGORY_CODE)
+ Values
+   (17660, 'LK');
+Insert into CATEGORY_PRODUCT
+   (PRDSEQ, CATEGORY_CODE)
+ Values
+   (17660, 'UA');
+Insert into CATEGORY_PRODUCT
+   (PRDSEQ, CATEGORY_CODE)
+ Values
+   (17660, 'XA');
+Insert into CATEGORY_PRODUCT
+   (PRDSEQ, CATEGORY_CODE)
+ Values
+   (17836, 'LU');
+Insert into CATEGORY_PRODUCT
+   (PRDSEQ, CATEGORY_CODE)
+ Values
+   (17836, 'UM');
+Insert into CATEGORY_PRODUCT
+   (PRDSEQ, CATEGORY_CODE)
+ Values
+   (17836, 'XE');
+Insert into CATEGORY_PRODUCT
+   (PRDSEQ, CATEGORY_CODE)
+ Values
+   (17840, 'OO');
+Insert into CATEGORY_PRODUCT
+   (PRDSEQ, CATEGORY_CODE)
+ Values
+   (17840, 'TC');
+Insert into CATEGORY_PRODUCT
+   (PRDSEQ, CATEGORY_CODE)
+ Values
+   (18021, 'OO');
+Insert into CATEGORY_PRODUCT
+   (PRDSEQ, CATEGORY_CODE)
+ Values
+   (18021, 'TC');
+Insert into CATEGORY_PRODUCT
+   (PRDSEQ, CATEGORY_CODE)
+ Values
+   (18218, 'SF');
+Insert into CATEGORY_PRODUCT
+   (PRDSEQ, CATEGORY_CODE)
+ Values
+   (18218, 'UA');
+Insert into CATEGORY_PRODUCT
+   (PRDSEQ, CATEGORY_CODE)
+ Values
+   (18218, 'XA');
+Insert into CATEGORY_PRODUCT
+   (PRDSEQ, CATEGORY_CODE)
+ Values
+   (18466, 'OO');
+Insert into CATEGORY_PRODUCT
+   (PRDSEQ, CATEGORY_CODE)
+ Values
+   (18466, 'TC');
+Insert into CATEGORY_PRODUCT
+   (PRDSEQ, CATEGORY_CODE)
+ Values
+   (18466, 'XF');
+Insert into CATEGORY_PRODUCT
+   (PRDSEQ, CATEGORY_CODE)
+ Values
+   (18600, 'OO');
+Insert into CATEGORY_PRODUCT
+   (PRDSEQ, CATEGORY_CODE)
+ Values
+   (18600, 'TC');
+Insert into CATEGORY_PRODUCT
+   (PRDSEQ, CATEGORY_CODE)
+ Values
+   (18600, 'XF');
+Insert into CATEGORY_PRODUCT
+   (PRDSEQ, CATEGORY_CODE)
+ Values
+   (19836, 'NN');
+Insert into CATEGORY_PRODUCT
+   (PRDSEQ, CATEGORY_CODE)
+ Values
+   (20256, 'LB');
+Insert into CATEGORY_PRODUCT
+   (PRDSEQ, CATEGORY_CODE)
+ Values
+   (20256, 'UA');
+Insert into CATEGORY_PRODUCT
+   (PRDSEQ, CATEGORY_CODE)
+ Values
+   (20256, 'XD');
+Insert into CATEGORY_PRODUCT
+   (PRDSEQ, CATEGORY_CODE)
+ Values
+   (20260, 'LB');
+Insert into CATEGORY_PRODUCT
+   (PRDSEQ, CATEGORY_CODE)
+ Values
+   (20260, 'UA');
+Insert into CATEGORY_PRODUCT
+   (PRDSEQ, CATEGORY_CODE)
+ Values
+   (20260, 'XD');
+Insert into CATEGORY_PRODUCT
+   (PRDSEQ, CATEGORY_CODE)
+ Values
+   (20360, 'NN');
+Insert into CATEGORY_PRODUCT
+   (PRDSEQ, CATEGORY_CODE)
+ Values
+   (20416, 'LK');
+Insert into CATEGORY_PRODUCT
+   (PRDSEQ, CATEGORY_CODE)
+ Values
+   (20416, 'UA');
+Insert into CATEGORY_PRODUCT
+   (PRDSEQ, CATEGORY_CODE)
+ Values
+   (20416, 'XA');
+Insert into CATEGORY_PRODUCT
+   (PRDSEQ, CATEGORY_CODE)
+ Values
+   (20418, 'LK');
+Insert into CATEGORY_PRODUCT
+   (PRDSEQ, CATEGORY_CODE)
+ Values
+   (20418, 'UA');
+Insert into CATEGORY_PRODUCT
+   (PRDSEQ, CATEGORY_CODE)
+ Values
+   (20418, 'XA');
+Insert into CATEGORY_PRODUCT
+   (PRDSEQ, CATEGORY_CODE)
+ Values
+   (20440, 'LK');
+Insert into CATEGORY_PRODUCT
+   (PRDSEQ, CATEGORY_CODE)
+ Values
+   (20440, 'UA');
+Insert into CATEGORY_PRODUCT
+   (PRDSEQ, CATEGORY_CODE)
+ Values
+   (20440, 'XA');
+Insert into CATEGORY_PRODUCT
+   (PRDSEQ, CATEGORY_CODE)
+ Values
+   (20476, 'LI');
+Insert into CATEGORY_PRODUCT
+   (PRDSEQ, CATEGORY_CODE)
+ Values
+   (20476, 'UA');
+Insert into CATEGORY_PRODUCT
+   (PRDSEQ, CATEGORY_CODE)
+ Values
+   (20476, 'XC');
+Insert into CATEGORY_PRODUCT
+   (PRDSEQ, CATEGORY_CODE)
+ Values
+   (20556, 'UM');
+Insert into CATEGORY_PRODUCT
+   (PRDSEQ, CATEGORY_CODE)
+ Values
+   (20576, 'UM');
+Insert into CATEGORY_PRODUCT
+   (PRDSEQ, CATEGORY_CODE)
+ Values
+   (20680, 'HL');
+Insert into CATEGORY_PRODUCT
+   (PRDSEQ, CATEGORY_CODE)
+ Values
+   (20680, 'UA');
+Insert into CATEGORY_PRODUCT
+   (PRDSEQ, CATEGORY_CODE)
+ Values
+   (20680, 'XD');
+Insert into CATEGORY_PRODUCT
+   (PRDSEQ, CATEGORY_CODE)
+ Values
+   (20856, 'BL');
+Insert into CATEGORY_PRODUCT
+   (PRDSEQ, CATEGORY_CODE)
+ Values
+   (20856, 'UA');
+Insert into CATEGORY_PRODUCT
+   (PRDSEQ, CATEGORY_CODE)
+ Values
+   (20856, 'XA');
+Insert into CATEGORY_PRODUCT
+   (PRDSEQ, CATEGORY_CODE)
+ Values
+   (20858, 'BL');
+Insert into CATEGORY_PRODUCT
+   (PRDSEQ, CATEGORY_CODE)
+ Values
+   (20858, 'UA');
+Insert into CATEGORY_PRODUCT
+   (PRDSEQ, CATEGORY_CODE)
+ Values
+   (20858, 'XA');
+Insert into CATEGORY_PRODUCT
+   (PRDSEQ, CATEGORY_CODE)
+ Values
+   (20860, 'BL');
+Insert into CATEGORY_PRODUCT
+   (PRDSEQ, CATEGORY_CODE)
+ Values
+   (20860, 'UA');
+Insert into CATEGORY_PRODUCT
+   (PRDSEQ, CATEGORY_CODE)
+ Values
+   (20860, 'XA');
+Insert into CATEGORY_PRODUCT
+   (PRDSEQ, CATEGORY_CODE)
+ Values
+   (20862, 'BL');
+Insert into CATEGORY_PRODUCT
+   (PRDSEQ, CATEGORY_CODE)
+ Values
+   (20862, 'UA');
+Insert into CATEGORY_PRODUCT
+   (PRDSEQ, CATEGORY_CODE)
+ Values
+   (20862, 'XA');
+Insert into CATEGORY_PRODUCT
+   (PRDSEQ, CATEGORY_CODE)
+ Values
+   (21856, 'LU');
+Insert into CATEGORY_PRODUCT
+   (PRDSEQ, CATEGORY_CODE)
+ Values
+   (21856, 'UM');
+Insert into CATEGORY_PRODUCT
+   (PRDSEQ, CATEGORY_CODE)
+ Values
+   (21856, 'XE');
+Insert into CATEGORY_PRODUCT
+   (PRDSEQ, CATEGORY_CODE)
+ Values
+   (21858, 'LU');
+Insert into CATEGORY_PRODUCT
+   (PRDSEQ, CATEGORY_CODE)
+ Values
+   (21858, 'UA');
+Insert into CATEGORY_PRODUCT
+   (PRDSEQ, CATEGORY_CODE)
+ Values
+   (21858, 'XE');
+Insert into CATEGORY_PRODUCT
+   (PRDSEQ, CATEGORY_CODE)
+ Values
+   (22536, 'UA');
+Insert into CATEGORY_PRODUCT
+   (PRDSEQ, CATEGORY_CODE)
+ Values
+   (22596, 'LF');
+Insert into CATEGORY_PRODUCT
+   (PRDSEQ, CATEGORY_CODE)
+ Values
+   (22596, 'UB');
+Insert into CATEGORY_PRODUCT
+   (PRDSEQ, CATEGORY_CODE)
+ Values
+   (22596, 'XA');
+Insert into CATEGORY_PRODUCT
+   (PRDSEQ, CATEGORY_CODE)
+ Values
+   (22636, 'LF');
+Insert into CATEGORY_PRODUCT
+   (PRDSEQ, CATEGORY_CODE)
+ Values
+   (22636, 'UB');
+Insert into CATEGORY_PRODUCT
+   (PRDSEQ, CATEGORY_CODE)
+ Values
+   (22856, 'LF');
+Insert into CATEGORY_PRODUCT
+   (PRDSEQ, CATEGORY_CODE)
+ Values
+   (22856, 'UB');
+Insert into CATEGORY_PRODUCT
+   (PRDSEQ, CATEGORY_CODE)
+ Values
+   (22856, 'XA');
+Insert into CATEGORY_PRODUCT
+   (PRDSEQ, CATEGORY_CODE)
+ Values
+   (22858, 'LF');
+Insert into CATEGORY_PRODUCT
+   (PRDSEQ, CATEGORY_CODE)
+ Values
+   (22858, 'UB');
+Insert into CATEGORY_PRODUCT
+   (PRDSEQ, CATEGORY_CODE)
+ Values
+   (22858, 'XA');
+Insert into CATEGORY_PRODUCT
+   (PRDSEQ, CATEGORY_CODE)
+ Values
+   (23156, 'UN');
+Insert into CATEGORY_PRODUCT
+   (PRDSEQ, CATEGORY_CODE)
+ Values
+   (23956, 'LJ');
+Insert into CATEGORY_PRODUCT
+   (PRDSEQ, CATEGORY_CODE)
+ Values
+   (23956, 'UA');
+Insert into CATEGORY_PRODUCT
+   (PRDSEQ, CATEGORY_CODE)
+ Values
+   (23956, 'XH');
+Insert into CATEGORY_PRODUCT
+   (PRDSEQ, CATEGORY_CODE)
+ Values
+   (24042, 'LK');
+Insert into CATEGORY_PRODUCT
+   (PRDSEQ, CATEGORY_CODE)
+ Values
+   (24042, 'OO');
+Insert into CATEGORY_PRODUCT
+   (PRDSEQ, CATEGORY_CODE)
+ Values
+   (24078, 'DF');
+Insert into CATEGORY_PRODUCT
+   (PRDSEQ, CATEGORY_CODE)
+ Values
+   (24078, 'UA');
+Insert into CATEGORY_PRODUCT
+   (PRDSEQ, CATEGORY_CODE)
+ Values
+   (24078, 'XB');
+Insert into CATEGORY_PRODUCT
+   (PRDSEQ, CATEGORY_CODE)
+ Values
+   (24098, 'OO');
+Insert into CATEGORY_PRODUCT
+   (PRDSEQ, CATEGORY_CODE)
+ Values
+   (24098, 'TC');
+Insert into CATEGORY_PRODUCT
+   (PRDSEQ, CATEGORY_CODE)
+ Values
+   (24098, 'XA');
+Insert into CATEGORY_PRODUCT
+   (PRDSEQ, CATEGORY_CODE)
+ Values
+   (24588, 'OO');
+Insert into CATEGORY_PRODUCT
+   (PRDSEQ, CATEGORY_CODE)
+ Values
+   (24588, 'SF');
+Insert into CATEGORY_PRODUCT
+   (PRDSEQ, CATEGORY_CODE)
+ Values
+   (24588, 'XA');
+Insert into CATEGORY_PRODUCT
+   (PRDSEQ, CATEGORY_CODE)
+ Values
+   (25080, 'OO');
+Insert into CATEGORY_PRODUCT
+   (PRDSEQ, CATEGORY_CODE)
+ Values
+   (25256, 'OO');
+Insert into CATEGORY_PRODUCT
+   (PRDSEQ, CATEGORY_CODE)
+ Values
+   (25258, 'OO');
+Insert into CATEGORY_PRODUCT
+   (PRDSEQ, CATEGORY_CODE)
+ Values
+   (25296, 'UM');
+Insert into CATEGORY_PRODUCT
+   (PRDSEQ, CATEGORY_CODE)
+ Values
+   (25356, 'NN');
+Insert into CATEGORY_PRODUCT
+   (PRDSEQ, CATEGORY_CODE)
+ Values
+   (25416, 'DI');
+Insert into CATEGORY_PRODUCT
+   (PRDSEQ, CATEGORY_CODE)
+ Values
+   (25416, 'UA');
+Insert into CATEGORY_PRODUCT
+   (PRDSEQ, CATEGORY_CODE)
+ Values
+   (25436, 'DI');
+Insert into CATEGORY_PRODUCT
+   (PRDSEQ, CATEGORY_CODE)
+ Values
+   (25436, 'UA');
+Insert into CATEGORY_PRODUCT
+   (PRDSEQ, CATEGORY_CODE)
+ Values
+   (25456, 'DI');
+Insert into CATEGORY_PRODUCT
+   (PRDSEQ, CATEGORY_CODE)
+ Values
+   (25456, 'UA');
+Insert into CATEGORY_PRODUCT
+   (PRDSEQ, CATEGORY_CODE)
+ Values
+   (25456, 'XA');
+Insert into CATEGORY_PRODUCT
+   (PRDSEQ, CATEGORY_CODE)
+ Values
+   (25462, 'DI');
+Insert into CATEGORY_PRODUCT
+   (PRDSEQ, CATEGORY_CODE)
+ Values
+   (25462, 'UF');
+Insert into CATEGORY_PRODUCT
+   (PRDSEQ, CATEGORY_CODE)
+ Values
+   (25482, 'DI');
+Insert into CATEGORY_PRODUCT
+   (PRDSEQ, CATEGORY_CODE)
+ Values
+   (25482, 'UN');
+Insert into CATEGORY_PRODUCT
+   (PRDSEQ, CATEGORY_CODE)
+ Values
+   (25496, 'DI');
+Insert into CATEGORY_PRODUCT
+   (PRDSEQ, CATEGORY_CODE)
+ Values
+   (25496, 'UN');
+Insert into CATEGORY_PRODUCT
+   (PRDSEQ, CATEGORY_CODE)
+ Values
+   (25502, 'PP');
+Insert into CATEGORY_PRODUCT
+   (PRDSEQ, CATEGORY_CODE)
+ Values
+   (25504, 'PP');
+Insert into CATEGORY_PRODUCT
+   (PRDSEQ, CATEGORY_CODE)
+ Values
+   (25506, 'UM');
+Insert into CATEGORY_PRODUCT
+   (PRDSEQ, CATEGORY_CODE)
+ Values
+   (25518, 'OO');
+Insert into CATEGORY_PRODUCT
+   (PRDSEQ, CATEGORY_CODE)
+ Values
+   (25518, 'TC');
+Insert into CATEGORY_PRODUCT
+   (PRDSEQ, CATEGORY_CODE)
+ Values
+   (25518, 'XA');
+Insert into CATEGORY_PRODUCT
+   (PRDSEQ, CATEGORY_CODE)
+ Values
+   (25542, 'OO');
+Insert into CATEGORY_PRODUCT
+   (PRDSEQ, CATEGORY_CODE)
+ Values
+   (25542, 'TC');
+Insert into CATEGORY_PRODUCT
+   (PRDSEQ, CATEGORY_CODE)
+ Values
+   (25578, 'OO');
+Insert into CATEGORY_PRODUCT
+   (PRDSEQ, CATEGORY_CODE)
+ Values
+   (25636, 'HA');
+Insert into CATEGORY_PRODUCT
+   (PRDSEQ, CATEGORY_CODE)
+ Values
+   (25636, 'UA');
+Insert into CATEGORY_PRODUCT
+   (PRDSEQ, CATEGORY_CODE)
+ Values
+   (25636, 'XG');
+Insert into CATEGORY_PRODUCT
+   (PRDSEQ, CATEGORY_CODE)
+ Values
+   (25740, 'LQ');
+Insert into CATEGORY_PRODUCT
+   (PRDSEQ, CATEGORY_CODE)
+ Values
+   (25740, 'UA');
+Insert into CATEGORY_PRODUCT
+   (PRDSEQ, CATEGORY_CODE)
+ Values
+   (25742, 'LF');
+Insert into CATEGORY_PRODUCT
+   (PRDSEQ, CATEGORY_CODE)
+ Values
+   (25742, 'UA');
+Insert into CATEGORY_PRODUCT
+   (PRDSEQ, CATEGORY_CODE)
+ Values
+   (25798, 'HA');
+Insert into CATEGORY_PRODUCT
+   (PRDSEQ, CATEGORY_CODE)
+ Values
+   (25798, 'UA');
+Insert into CATEGORY_PRODUCT
+   (PRDSEQ, CATEGORY_CODE)
+ Values
+   (25798, 'XG');
+Insert into CATEGORY_PRODUCT
+   (PRDSEQ, CATEGORY_CODE)
+ Values
+   (25800, 'HA');
+Insert into CATEGORY_PRODUCT
+   (PRDSEQ, CATEGORY_CODE)
+ Values
+   (25800, 'UA');
+Insert into CATEGORY_PRODUCT
+   (PRDSEQ, CATEGORY_CODE)
+ Values
+   (25800, 'XG');
+Insert into CATEGORY_PRODUCT
+   (PRDSEQ, CATEGORY_CODE)
+ Values
+   (25802, 'HA');
+Insert into CATEGORY_PRODUCT
+   (PRDSEQ, CATEGORY_CODE)
+ Values
+   (25802, 'UM');
+Insert into CATEGORY_PRODUCT
+   (PRDSEQ, CATEGORY_CODE)
+ Values
+   (25802, 'XG');
+Insert into CATEGORY_PRODUCT
+   (PRDSEQ, CATEGORY_CODE)
+ Values
+   (25804, 'HA');
+Insert into CATEGORY_PRODUCT
+   (PRDSEQ, CATEGORY_CODE)
+ Values
+   (25804, 'UD');
+Insert into CATEGORY_PRODUCT
+   (PRDSEQ, CATEGORY_CODE)
+ Values
+   (25804, 'XE');
+Insert into CATEGORY_PRODUCT
+   (PRDSEQ, CATEGORY_CODE)
+ Values
+   (25806, 'UN');
+Insert into CATEGORY_PRODUCT
+   (PRDSEQ, CATEGORY_CODE)
+ Values
+   (25806, 'XB');
+Insert into CATEGORY_PRODUCT
+   (PRDSEQ, CATEGORY_CODE)
+ Values
+   (25816, 'UN');
+Insert into CATEGORY_PRODUCT
+   (PRDSEQ, CATEGORY_CODE)
+ Values
+   (25818, 'UC');
+Insert into CATEGORY_PRODUCT
+   (PRDSEQ, CATEGORY_CODE)
+ Values
+   (25916, 'UC');
+Insert into CATEGORY_PRODUCT
+   (PRDSEQ, CATEGORY_CODE)
+ Values
+   (25918, 'UK');
+Insert into CATEGORY_PRODUCT
+   (PRDSEQ, CATEGORY_CODE)
+ Values
+   (25920, 'UK');
+Insert into CATEGORY_PRODUCT
+   (PRDSEQ, CATEGORY_CODE)
+ Values
+   (25922, 'UK');
+Insert into CATEGORY_PRODUCT
+   (PRDSEQ, CATEGORY_CODE)
+ Values
+   (25936, 'UC');
+Insert into CATEGORY_PRODUCT
+   (PRDSEQ, CATEGORY_CODE)
+ Values
+   (25956, 'UM');
+Insert into CATEGORY_PRODUCT
+   (PRDSEQ, CATEGORY_CODE)
+ Values
+   (25996, 'MS');
+Insert into CATEGORY_PRODUCT
+   (PRDSEQ, CATEGORY_CODE)
+ Values
+   (25996, 'TC');
+Insert into CATEGORY_PRODUCT
+   (PRDSEQ, CATEGORY_CODE)
+ Values
+   (25998, 'MS');
+Insert into CATEGORY_PRODUCT
+   (PRDSEQ, CATEGORY_CODE)
+ Values
+   (25998, 'TC');
+Insert into CATEGORY_PRODUCT
+   (PRDSEQ, CATEGORY_CODE)
+ Values
+   (25998, 'XF');
+Insert into CATEGORY_PRODUCT
+   (PRDSEQ, CATEGORY_CODE)
+ Values
+   (26076, 'OO');
+Insert into CATEGORY_PRODUCT
+   (PRDSEQ, CATEGORY_CODE)
+ Values
+   (26076, 'TC');
+Insert into CATEGORY_PRODUCT
+   (PRDSEQ, CATEGORY_CODE)
+ Values
+   (26076, 'XF');
+Insert into CATEGORY_PRODUCT
+   (PRDSEQ, CATEGORY_CODE)
+ Values
+   (26096, 'OO');
+Insert into CATEGORY_PRODUCT
+   (PRDSEQ, CATEGORY_CODE)
+ Values
+   (26120, 'LI');
+Insert into CATEGORY_PRODUCT
+   (PRDSEQ, CATEGORY_CODE)
+ Values
+   (26120, 'OO');
+Insert into CATEGORY_PRODUCT
+   (PRDSEQ, CATEGORY_CODE)
+ Values
+   (26120, 'XC');
+Insert into CATEGORY_PRODUCT
+   (PRDSEQ, CATEGORY_CODE)
+ Values
+   (26136, 'LH');
+Insert into CATEGORY_PRODUCT
+   (PRDSEQ, CATEGORY_CODE)
+ Values
+   (26136, 'MS');
+Insert into CATEGORY_PRODUCT
+   (PRDSEQ, CATEGORY_CODE)
+ Values
+   (26136, 'XD');
+Insert into CATEGORY_PRODUCT
+   (PRDSEQ, CATEGORY_CODE)
+ Values
+   (26138, 'LJ');
+Insert into CATEGORY_PRODUCT
+   (PRDSEQ, CATEGORY_CODE)
+ Values
+   (26138, 'MS');
+Insert into CATEGORY_PRODUCT
+   (PRDSEQ, CATEGORY_CODE)
+ Values
+   (26138, 'XH');
+Insert into CATEGORY_PRODUCT
+   (PRDSEQ, CATEGORY_CODE)
+ Values
+   (26288, 'OO');
+Insert into CATEGORY_PRODUCT
+   (PRDSEQ, CATEGORY_CODE)
+ Values
+   (26316, 'NN');
+Insert into CATEGORY_PRODUCT
+   (PRDSEQ, CATEGORY_CODE)
+ Values
+   (26316, 'SP');
+Insert into CATEGORY_PRODUCT
+   (PRDSEQ, CATEGORY_CODE)
+ Values
+   (26318, 'NN');
+Insert into CATEGORY_PRODUCT
+   (PRDSEQ, CATEGORY_CODE)
+ Values
+   (26322, 'NN');
+Insert into CATEGORY_PRODUCT
+   (PRDSEQ, CATEGORY_CODE)
+ Values
+   (26416, 'OO');
+Insert into CATEGORY_PRODUCT
+   (PRDSEQ, CATEGORY_CODE)
+ Values
+   (26416, 'XF');
+
 update category set cat_order = 7 where category_code = 'SS'
 ;
 
