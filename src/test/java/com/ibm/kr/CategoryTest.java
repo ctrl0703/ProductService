@@ -25,7 +25,7 @@ class CategoryTest {
 	 * 테스트 메소드 명 : getCategoryList(String categoryCode)
 	 * 테스트 메소드 기능 : 전달된 카테고리 코드 하위 카테고리 리스트 전달(상위 카테고리가 전달된 카테고리 코드인 카테고리 목록)
 	 * 테스트 시나리오 : 1. 유형별 카테고리 목록(A) 조회
-	 * 				2. 카테고리 목록 개수가 13개인지 확인
+	 * 				2. 카테고리 목록 개수가 12개인지 확인
 	 * 				3. CAT_ORDER로 정렬되었는지 확인
 	 * 				4. 카테고리 하위 카테고리가 있는지 확인(첫번째 카테고리인 UM의 하위 카테고리 개수가 7개인지 확인)
 	 */
@@ -33,8 +33,8 @@ class CategoryTest {
 		List<Category> categories = productController.getCategoryList("A");
 
 		assertThat(categories != null);
-		assertEquals(13, categories.size());
-		assertEquals("UM", categories.get(0));
+		assertEquals(12, categories.size());
+		assertEquals("UM", categories.get(0).getId());
 		assertEquals(7, categories.get(0).getSubCategories().size());
 	}
 
@@ -55,8 +55,16 @@ class CategoryTest {
 		assertThat(categories != null);
 		assertEquals(5, categories.size());
 		assertEquals("A", categories.get(0).getId());
-		assertEquals(13, categories.get(0).getSubCategories().size());
-		assertEquals("UM", categories.get(0).getSubCategories().get(0));
+		assertEquals(12, categories.get(0).getSubCategories().size());
+		assertEquals("UM", categories.get(0).getSubCategories().get(0).getId());
 		assertEquals(7, categories.get(0).getSubCategories().get(0).getSubCategories().size());
+	}
+	
+	@Test
+	void 카테고리_조회() {
+		Category category = productController.getCategory("A");
+		assertEquals("A", category.getId());
+		assertEquals("유형별", category.getName());
+		assertEquals(12, category.getSubCategories().size());
 	}
 }

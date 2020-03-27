@@ -37,4 +37,9 @@ class CategoryProductTest {
 		assertEquals(9, products.size());
 	}
 	
+	@Test
+	void 연관제품_목록_조회() {
+		List<Product> relatedProducts = productController.getRelatedProductList(20858L, "B"); // 제주 왕벚꽃 라인 제품 리스트 20858, 20856, 20860, 20862이 나와야함 
+		List<Product> relatedProducts2 = productController.getRelatedProductList(16762L, "B"); // 트루케어 라인 제품 리스트 16762, 12878, 25296, 18466, 18600, 24098, 13316, 13317, 26076, 25998, 15598, 25518, 25956, 14997, 18021, 16761, 25542, 25996, 14397, 17840이 나와야함
+	}
 }

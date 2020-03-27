@@ -42,4 +42,34 @@ class ProductTest {
 		Product productWithOption = productController.getProduct(16377L);
 		assertEquals(10, productWithOption.getOptions().size());
 	}
+	
+	@Test
+	/*
+	 * 14342 : BEST
+	 * 16377 : BEST, new
+	 * 11266 : NEW
+	 * 13317 : none
+	 */
+	void 신제품_여부() {
+		Product productNew = productController.getProduct(11266L);
+		Product productNotNew = productController.getProduct(13317L);
+		
+		assertEquals(true, productNew.getIsNew());
+		assertEquals(false, productNotNew.getIsNew());
+	}
+
+	/*
+	 * 14342 : BEST
+	 * 16377 : BEST, new
+	 * 11266 : NEW
+	 * 13317 : none
+	 */
+	@Test
+	void 베트스제품_여부() {
+		Product productBest = productController.getProduct(14342L);
+		Product productNotBest = productController.getProduct(13317L);
+		
+		assertEquals(true, productBest.getIsBest());
+		assertEquals(false, productNotBest.getIsBest());
+	}
 }
