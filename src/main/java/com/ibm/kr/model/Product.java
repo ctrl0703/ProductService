@@ -41,5 +41,4 @@ public class Product {
 	Boolean isDiscount = false;
 	
 	List<Option> options = new ArrayList<Option>();
-	Category sameLineCategory;
 }

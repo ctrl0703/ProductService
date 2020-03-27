@@ -27,7 +27,6 @@
 	<result property="element" column="PRDELEMENT"/>
 	<result property="useCareDescription" column="USECAREDESC"/>
 	<result property="ASDescription" column="ASDESC"/>
-	
 	<result property="isNew" column="NEWPRDFL"/>
 	<result property="isBest" column="BESTPRDFL"/>
 	<result property="isDiscount" column="DISCOUNTPRDFL"/>
@@ -49,14 +48,26 @@
 </resultMap>
 
 <select id="selectProduct" resultMap="product">
-	SELECT *
-	FROM PRODUCT
-	where prdseq = #{prdseq}
+	select prd.*,
+		   case when newprd.prdseq  is null then false else true end newprdfl ,
+		   case when bestprd.prdseq is null then false else true end bestprdfl
+	  from product prd
+		   left outer join category_product newprd  on newprd.category_code = 'D'  and newprd.prdseq  = prd.prdseq
+		   left outer join category_product bestprd on bestprd.category_code = 'E' and bestprd.prdseq = prd.prdseq
+	 where prd.prdseq = #{prdseq}
 </select>
 
-<select id="selectAll" resultMap="product">
-	SELECT *
-	FROM PRODUCT
+<select id="selectList" resultMap="product">
+	select prd.*,
+		   case when newprd.prdseq  is null then false else true end newprdfl ,
+		   case when bestprd.prdseq is null then false else true end bestprdfl
+	  from product prd
+		   left outer join category_product newprd  on newprd.category_code = 'D'  and newprd.prdseq  = prd.prdseq
+		   left outer join category_product bestprd on bestprd.category_code = 'E' and bestprd.prdseq = prd.prdseq
+	 where 1=1
+	 <if test ="name != null" >
+	 and prd.prdnm like '%' || #{name} || '%'
+	 </if>
 </select>
 
 <select id="selectProductsByCat" resultMap="product">
@@ -88,14 +99,10 @@
 		,bestprdfl
 	FROM 
 	(
-		SELECT * 
-		FROM 
-		(
-			SELECT *, COUNT(1) OVER() AS PAGETOTCNT 
+			SELECT *, COUNT(1) OVER() AS PAGETOTCNT,row_number () over () as RNUM 
 			FROM 
 			(
-				select category_prd.*
-					 , row_number () over () as RNUM
+				select distinct category_prd.*
 				from 
 				(
 					with recursive search_category(category_code, name, super_category_code, cat_order,level) as
@@ -126,7 +133,6 @@
 					order by level , super_category_code, a.cat_order, b.prdseq 
 				) category_prd
 			) withCnt
-		) result	
 	) rm 
 	WHERE RNUM <![CDATA[>=]]> #{pageStart} AND RNUM <![CDATA[<]]> #{pageEnd}
 </select>
@@ -163,12 +169,12 @@
 	(
 		SELECT withCnt.*
 		     , COUNT(1) OVER() AS PAGETOTCNT 
+		     , row_number () over () as RNUM
 		FROM 
 		(
-			select p.*
+			select distinct p.*
 				,(case when newprd.prdseq is null then false else true end) newprdfl
 			    ,(case when bestprd.prdseq is null then false else true end) bestprdfl
-			    , row_number () over () as RNUM
 			from 
 			(
 				with recursive search_category(category_code, name, super_category_code, cat_order,level) as
@@ -198,8 +204,6 @@
 	) result 
 	WHERE RNUM <![CDATA[>=]]> #{pageStart} AND RNUM <![CDATA[<]]> #{pageEnd}
 </select>
-
-
 
 
 <select id="selectCategory" resultMap="category">

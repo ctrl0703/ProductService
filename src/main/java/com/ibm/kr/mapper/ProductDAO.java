@@ -18,8 +18,8 @@ public class ProductDAO {
 	@Autowired
 	private SqlSession sqlSession;
 	
-	public List<Product> selectAll() {
-		return sqlSession.selectList("com.ibm.kr.product.selectAll");
+	public List<Product> selectList(Map<String, Object> parameter) {
+		return sqlSession.selectList("com.ibm.kr.product.selectList", parameter);
 	}
 	
 	public List<Category> selectCategory() {
