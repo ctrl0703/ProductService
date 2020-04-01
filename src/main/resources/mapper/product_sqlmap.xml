@@ -142,7 +142,7 @@
 					join product  c on b.prdseq  = c.prdseq 
 				    left outer join category_product newprd on newprd.category_code ='D' and newprd.prdseq =  c.prdseq
 				    left outer join category_product bestprd on bestprd.category_code ='E' and bestprd.prdseq =  c.prdseq
-					order by level , super_category_code, a.cat_order, b.prdseq 
+					order by level , super_category_code, a.cat_order, b.prdseq
 				) category_prd
 				<choose>
 				    <when test="sort == 'price'">

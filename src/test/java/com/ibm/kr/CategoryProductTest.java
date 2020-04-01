@@ -69,30 +69,36 @@ class CategoryProductTest {
 		assertThat(hierarchyProducts != null);
 		assertEquals(52, hierarchyProducts.getTotalCount());
 		assertEquals(20, hierarchyProducts.getContent().size());
+		assertEquals(1, hierarchyProducts.getPage());
 		
+		reqParam = new HashMap<>();
 		reqParam.put("page","3");
 		reqParam.put("sort","name");
 		hierarchyProducts = productController.getCategoryProductListByPage("A",reqParam);
 		assertEquals(23156L, hierarchyProducts.getContent().get(0).getId());
 		assertEquals("포레스트 포맨 노세범 선블록 SPF50+ PA++++", hierarchyProducts.getContent().get(hierarchyProducts.getContent().size()-1).getName());
+		assertEquals(3, hierarchyProducts.getPage());
 		
+		reqParam = new HashMap<>();
 		reqParam.put("page","2");
 		reqParam.put("sort","price");
 		hierarchyProducts = productController.getCategoryProductListByPage("A",reqParam);
 		assertEquals(12068L, hierarchyProducts.getContent().get(0).getId());
 		assertEquals("브라이트닝 포어 슬리핑 마스크", hierarchyProducts.getContent().get(hierarchyProducts.getContent().size()-1).getName());
 		
+		reqParam = new HashMap<>();
 		reqParam.put("page","2");
 		reqParam.put("sort","price");
 		hierarchyProducts = productController.getCategoryProductListByPage("Z",reqParam);
 		assertEquals(0, hierarchyProducts.getContent().size());
 		
+		reqParam = new HashMap<>();
 		reqParam.put("page","4");
 		reqParam.put("sort","price");
 		hierarchyProducts = productController.getCategoryProductListByPage("A",reqParam);
 		assertEquals(0, hierarchyProducts.getContent().size());
 		
-
+		reqParam = new HashMap<>();
 		reqParam.put("page","1");
 		reqParam.put("sort",null);
 		hierarchyProducts = productController.getCategoryProductListByPage("UMBB",reqParam);

@@ -114,6 +114,8 @@ public class ProductService {
 		// Page객체는 내부에 페이징된 제품 리스트(size만큼), 총 제품 수량, page size 정보를 갖고있음. sort 컬럼으로 정렬('order by ' + sort)
 		
 		Page<Product> pageProduct = new Page<Product>();
+		int page = Integer.parseInt((String) (reqParam.get("page") == null ? "1" : reqParam.get("page")));
+		pageProduct.setPage(page);
 		
 		reqParam.put("id", categoryCode);
 		
@@ -124,11 +126,8 @@ public class ProductService {
 		//3. 페이징
 		if(totalCount > 0) {
 			int pageSize = pageProduct.getPageSize();
-			int calPage = totalCount / pageSize + 1;
+			int calPage = totalCount % pageSize == 0 ? totalCount / pageSize : totalCount / pageSize + 1;
 			//혹시라도 존재할 수 없는 page가 들어올 경우 content를 null로 리턴
-
-			int page = Integer.parseInt((String) (reqParam.get("page") == null ? "1" : reqParam.get("page")));
-			
 			if(page > calPage) {
 				return pageProduct;
 			} else {
