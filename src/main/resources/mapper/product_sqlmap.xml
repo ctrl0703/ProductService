@@ -70,7 +70,7 @@
 	 </if>
 </select>
 
-<select id="selectProductsByCat" resultMap="product">
+<sql id="productHeaderSql">
 	SELECT prdseq
 		,prdimg
 		,prdnms
@@ -99,6 +99,18 @@
 		,bestprdfl
 	FROM 
 	(
+</sql>
+
+<sql id="productFooterSql">
+	)  result
+	WHERE RNUM <![CDATA[>=]]> #{pageStart} AND RNUM <![CDATA[<=]]> #{pageEnd}
+</sql>
+
+
+<select id="selectProductsByCat" resultMap="product">
+	<if test="pageStart != null and pageEnd != null">
+		<include refid="productHeaderSql"/>
+	</if>
 			SELECT *, COUNT(1) OVER() AS PAGETOTCNT,row_number () over () as RNUM 
 			FROM 
 			(
@@ -132,9 +144,18 @@
 				    left outer join category_product bestprd on bestprd.category_code ='E' and bestprd.prdseq =  c.prdseq
 					order by level , super_category_code, a.cat_order, b.prdseq 
 				) category_prd
+				<choose>
+				    <when test="sort == 'price'">
+				    	order by salprc
+				    </when>
+				    <otherwise>
+				    	order by prdnm
+				    </otherwise>
+			   </choose>
 			) withCnt
-	) rm 
-	WHERE RNUM <![CDATA[>=]]> #{pageStart} AND RNUM <![CDATA[<]]> #{pageEnd}
+	<if test="pageStart != null and pageEnd != null">
+		<include refid="productFooterSql"/>
+	</if>
 </select>
 
 

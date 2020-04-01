@@ -11,6 +11,7 @@ import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.bind.annotation.RestController;
 
 import com.ibm.kr.model.Category;
+import com.ibm.kr.model.Page;
 import com.ibm.kr.model.Product;
 import com.ibm.kr.service.ProductService;
 
@@ -52,5 +53,10 @@ public class ProductController {
 	@GetMapping("/product/{productId}/category/{categoryCode}/product")
 	public List<Product> getRelatedProductList(@PathVariable Long productId, @PathVariable String categoryCode) {
 		return productService.getRelatedProductList(productId,categoryCode,1,60);
+	}
+
+	@GetMapping("/category/{categoryCode}/pagingProduct")
+	public Page<Product> getCategoryProductListByPage(@PathVariable String categoryCode, @RequestParam Map<String, Object> reqParam) {
+		return productService.getCategoryProductListByPage(categoryCode, reqParam);
 	}
 }

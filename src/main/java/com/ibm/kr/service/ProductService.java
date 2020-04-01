@@ -12,6 +12,7 @@ import org.springframework.stereotype.Service;
 import com.ibm.kr.mapper.ProductDAO;
 import com.ibm.kr.model.Category;
 import com.ibm.kr.model.Option;
+import com.ibm.kr.model.Page;
 import com.ibm.kr.model.Product;
 
 @Service
@@ -107,5 +108,38 @@ public class ProductService {
 		if(str.isEmpty()) str = "";
 		if(str.trim().length() == 0) str="";
 		return str;
+	}
+
+	public Page<Product> getCategoryProductListByPage(String categoryCode, Map<String, Object> reqParam) {
+		// Page객체는 내부에 페이징된 제품 리스트(size만큼), 총 제품 수량, page size 정보를 갖고있음. sort 컬럼으로 정렬('order by ' + sort)
+		
+		Page<Product> pageProduct = new Page<Product>();
+		
+		reqParam.put("id", categoryCode);
+		
+		//2. 총 제품 수량 구하기
+		int totalCount = productDao.selectProductsByCat(reqParam).size();
+		pageProduct.setTotalCount(totalCount);
+		
+		//3. 페이징
+		if(totalCount > 0) {
+			int pageSize = pageProduct.getPageSize();
+			int calPage = totalCount / pageSize + 1;
+			//혹시라도 존재할 수 없는 page가 들어올 경우 content를 null로 리턴
+
+			int page = Integer.parseInt((String) (reqParam.get("page") == null ? "1" : reqParam.get("page")));
+			
+			if(page > calPage) {
+				return pageProduct;
+			} else {
+				int pageEnd = page * pageSize;
+				int pageStart = pageEnd - pageSize + 1;
+				reqParam.put("pageStart", pageStart);
+				reqParam.put("pageEnd", pageEnd);
+				pageProduct.setContent(productDao.selectProductsByCat(reqParam));
+			}
+		}
+		
+		return pageProduct;
 	}
 }
